@@ -1,0 +1,313 @@
+/*
+================================================
+⠀ ⠀⢀⡔⠋⢉⠩⡉⠛⠛⠛⠉⣉⣉⠒⠒⡦⣄⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀
+ ⢀⠎⠀⠀⠠⢃⣉⣀⡀⠂⠀⠀⠄⠀⠀⠀⠀  ⢱⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀
+ ⡰⠟⣀⢀⣒⠐⠛⡛⠳⢭⠆⠀⠤⡶⠿⠛⠂⠀⢈⠳⡀⠀⠀⠀⠀ ⠀⠀⠀⠀
+⢸⢈⢘⢠⡶⢬⣉⠉⠀⠀⡤⠄⠀⠀⠣⣄⠐⠚⣍⠁⢘⡇⠀⠀⠀⠀ ⠀⠀⠀⠀
+⠈⢫⡊⠀⠹⡦⢼⣍⠓⢲⠥⢍⣁⣒⣊⣀⡬⢴⢿⠈⡜⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀
+  ⠹⡄⠀⠘⢾⡉⠙⡿⠶⢤⣷⣤⣧⣤⣷⣾⣿⠀⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀
+  ⠘⠦⡠⢀⠍⡒⠧⢄⣀⣁⣀⣏⣽⣹⠽⠊⠀⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀
+     ⠈⠑⠪⢔⡁⠦⠀⢀⡤⠤⠤⠄⠀⠠⠀⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+         ⠈⠑⠲⠤⠤⣀⣀⣀⣀⣀⠔⠁
+================================================
+*/
+
+/*
+
+a mashup of stuff i like, idk
+do note that using BetterDiscord technically breaks 
+Terms of Service, however discord does not care if you use
+it unless it is used for malicious purposes. 
+
+it is ultimately against tos so you should be careful when using
+BetterDiscord
+
+*/
+
+/* Variables */
+:root {
+  /* General color/font */
+  --color: #caeeff;
+  --font:  'Whitney';
+
+  /* Window text */
+  --window-text: 'when the discord is sus!';
+
+  /* For members list popout */
+  --hover-animation-speed: 0.35s;
+  --seperator-color: var(--background-accent);
+
+  /* For message text */
+  --message-color: var(--color);
+
+  /* Home button icon */
+  --home-button: url(
+    'https://cdn.discordapp.com/attachments/809479255233789992/822572397823524904/414556245178056706.gif'
+  );
+
+  /* Self explanitory */
+  --bot-tag-color: var(--color);
+  --unread-color: var(--color);
+  --unread-bar-color: var(--color);
+  --username-color: var(--color);
+
+  /* Ping color */
+  --ping-color: rgb(0, 174, 255);
+}
+
+/* Animations */
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  60% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes settings-gear {
+  from { transform:rotate(0deg) }
+  to { transform:rotate(360deg) }
+}
+
+/* The actual theme */
+
+/* Spinning settings gear */
+.button-14-BFJ[aria-label="User Settings"]:hover svg {
+  animation: settings-gear 2s linear infinite;
+}
+
+/* Custom home button icon */
+#app-mount .listItemWrapper-3X98Pc .childWrapper-anI2G9 {
+    box-shadow: 0 0 5px #ffffff!important;
+    background: var(--home-button) center/cover no-repeat;
+}
+
+/* Members list popout */
+.membersWrap-2h-GB4 {
+  min-width: unset;
+  width: 50px;
+  justify-content: right;
+}
+
+.members-1998pB {
+  transition: transform var(--hover-animation-speed);
+}
+
+.membersWrap-2h-GB4:hover .members-1998pB {
+  transform: translateX(-190px);
+}
+
+.membersWrap-2h-GB4 .membersGroup-v9BXpm::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  border-radius: 50px;
+  background: unset;
+  background-color: var(--seperator-color);
+  position: absolute;
+  left: -36px;
+  top: 29px;
+  margin-left: 0px;
+}
+
+.membersWrap-2h-GB4 .members-1998pB .member-3-YXUe {
+  background-color: unset;
+  margin-left: 0px;
+  transition: margin-left var(--hover-animation-speed);
+}
+
+.membersWrap-2h-GB4:hover .members-1998pB .member-3-YXUe {
+  margin-left: 8px;
+}
+
+.membersWrap-2h-GB4:hover .membersGroup-v9BXpm {
+  transform: translateX(-6px);
+}
+
+.membersWrap-2h-GB4 .membersGroup-v9BXpm {
+  cursor: default;
+  transform: translateX(45px);
+  transition: transform var(--hover-animation-speed);
+  overflow: visible;
+}
+
+/* Colored messages */
+.message-2qnXI6 .markup-2BOw-j.messageContent-2qWWxC {
+  color: var(--message-color);
+
+  /* Other stuff to do with message text */
+  font-weight: 500; /* For better readibility */
+}
+
+/* Custom window text */
+/* Text and font should be set in variables */
+.wordmark-2iDDfm {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  height: calc(100% + 4px);
+  top: -4px;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: var(--font);
+}
+
+.wordmark-2iDDfm > svg {
+  display: none;
+}
+
+.wordmark-2iDDfm:after {
+  content: var(--window-text) !important;
+  padding-left: 4px;
+}
+
+.typeWindows-1za-n7 {
+  position: relative;
+}
+
+/* Other things that change color */
+
+.botTagRegular-2HEhHi {
+  background-color:var(--bot-tag-color);
+}
+.botTag-ymWxY6 {
+  background-color: var(--bot-tag-color);
+  color:#fff;
+}
+.bot-2Fta1w {
+  background-color: var(--bot-tag-color);
+  color:#fff;
+}
+.isUnread-3Ef-o9 {
+  border-color: var(--unread-color);
+}
+.newMessagesBar-265mhP {
+  background-color: var(--unread-bar-color)
+}
+.title-eS5yk3 {
+  color: var(--username-color);
+}
+
+/* Prevent selection of usernames and timestamps */
+.username-1A8OIy, .header-23xsNx  {
+    user-select: none;
+}
+
+/* Better avatars */
+.avatar-1BDn8e {
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ffffff;
+  transition: all .25s ease-in-out;
+}
+
+.avatar-1BDn8e:hover {
+  transform: scale(1.06) skew(-10deg) !important;
+  animation: breathing 5s ease-out infinite normal !important;
+}
+
+.homeIcon-tEMBK1 {
+  display: none;
+}
+
+/* File Viewer thing */
+.container-1pMiXm {
+  width: 60% 
+}
+
+/* Search icon as button */
+.search-36MZv- {order: 5}
+.searchBar-3dMhjb {
+  width: 28px;
+  transition: width 0.6s ease-in-out;
+  color: #fff;
+  background: none;
+}
+.focused-31_ccS .searchBar-3dMhjb,
+.open-6_Y_aH .searchBar-3dMhjb,
+.searchBar-3dMhjb:hover {
+  width: 180px;
+  background: var(--background-tertiary);
+}
+.icon-3cZ1F_{
+  height: 24px;
+  width: 24px;
+  color: var(--interactive-normal);
+}
+.iconContainer-O4O2CN{bottom: 3px}
+.search-36MZv-{margin-left: 0px}
+
+/* Toolbar border */
+.toolbar-1t6TWx {
+  border: 1px solid rgba(35,39,42, 0.3);
+  border-radius: 70px;
+  background-color: rgba(35,39,42, 0.3);
+  box-shadow: 0px 2px 2px black;
+}
+
+.toolbar-1t6TWx div svg {
+  padding: 2px;
+}
+
+/* Changes the ping color */
+.numberBadge-2s8kKX {
+  background-color: var(--ping-color) !important;
+}
+
+/* Rounded message bar */
+.scrollableContainer-2NUZem {
+  border-radius: 22px;
+}
+
+/* Embeds and images will now have shadows */
+.da-embedWrapper, .icon-27yU2q{
+  box-shadow: -2px 2px 3px black !important;
+  border-radius: 8px !important;
+}
+
+/* Makes discord less blocky */
+
+.scrollableContainer-2NUZem, .userPopout-3XzG_A, .itemCard-v9viV7, .uploadModal-2ifh8j, .bd-addon-card, .bd-addon-modal, .quickswitcher-3JagVE{
+  border-radius: 25px!important
+}
+.chat-3bRxxu, .container-1D34oG, .container-3Mxszk, .applicationStore-1pNvnv {
+  border-radius:25px;
+  margin-left:10px;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+.platform-win .sidebar-2K8pFh {
+  border-radius: 25px;
+  margin-bottom: 0.7px;
+  margin-top: 3px;
+}
+
+/* Hide unnessecary stuff */
+
+/* Help button, will never use */
+.toolbar-1t6TWx a {display: none} 
+
+/* Useless message bar buttons */
+.button-3AYNKb {display: none}
+
+/* Search bar thing (ctrl+k much better) */
+.searchBar-6Kv8R2 {display: none}
